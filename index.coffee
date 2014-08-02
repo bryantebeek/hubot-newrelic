@@ -10,32 +10,50 @@
 #   HUBOT_NEWRELIC_API_KEY
 #
 # Commands:
-#   hubot newrelic - Returns summary application stats from New Relic
+#   hubot newrelic list apps - Returns summary application stats from New Relic
+#   hubot newrelic list apps - Returns summary application stats from New Relic
 #
 # Author:
 #   bryantebeek
 
 moment = require "moment"
 request = require "request"
-schedule = require "node-schedule"
+Promise = require "bluebird"
 
 module.exports = (robot) ->
-  accountId = process.env.HUBOT_NEWRELIC_ACCOUNT_ID
-  apiKey = process.env.HUBOT_NEWRELIC_API_KEY
 
-  setup = ->
+  class NewRelic
+    constructor: (@apiKey, @accountId) ->
+
+    getApplications: ->
+      request (@getRequestOptions path: "/applications.json" ), (error, response, body) ->
+        data = JSON.parse(body)
+
+    getServers: ->
+      request (@getRequestOptions path: "/servers.json" ), (error, response, body) ->
+        data = JSON.parse(body)
+
+    getRequestOptions: (options) ->
+      "url": "https://api.newrelic.com/v2/#{options.path}",
+      "headers":
+        "X-Api-Key": @apiKey
+
+
+
+
+
+
+  reload = ->
     unless robot.brain.data.newrelic?
       robot.brain.data.newrelic = {}
 
-    request { url: "https://api.newrelic.com/v2/applications.json", headers: { "X-Api-Key": apiKey } }, (error, response, body) ->
-      data = JSON.parse(body)
+
       robot.brain.data.newrelic.applications = data.applications
 
-    request { url: "https://api.newrelic.com/v2/servers.json", headers: { "X-Api-Key": apiKey } }, (error, response, body)->
       data = JSON.parse(body)
       robot.brain.data.newrelic.servers = data.servers
 
-  setup()
+  reload()
 
   robot.respond /newrelic\s(list|show)\sapp(s|lications)/i, (message) ->
     for application in robot.brain.data.newrelic.applications
