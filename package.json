@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "http://github.com/bryantebeek/hubot-newrelic"
+    "url": "https://github.com/bryantebeek/hubot-newrelic"
   },
   "keywords": [
     "hubot"
