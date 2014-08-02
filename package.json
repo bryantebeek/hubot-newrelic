@@ -1,0 +1,22 @@
+{
+  "name": "hubot-newrelic",
+  "version": "0.0.1",
+  "description": "New Relic integration for Hubot",
+  "main": "index.coffee",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/bryantebeek/hubot-newrelic"
+  },
+  "keywords": [
+    "hubot"
+  ],
+  "author": "Bryan te Beek",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bryantebeek/hubot-newrelic/issues"
+  },
+  "homepage": "https://github.com/bryantebeek/hubot-newrelic"
+}
