@@ -50,9 +50,11 @@
 29 silly publish   license: 'MIT',
 29 silly publish   bugs: { url: 'https://github.com/bryantebeek/hubot-newrelic/issues' },
 29 silly publish   homepage: 'https://github.com/bryantebeek/hubot-newrelic',
-29 silly publish   readme: 'ERROR: No README data found!',
+29 silly publish   readme: 'hubot-newrelic\n==============\n\nNew Relic integration for Hubot\n',
+29 silly publish   readmeFilename: 'README.md',
+29 silly publish   gitHead: '97ee206ed6bca44070ee4245a826130dcd55bafc',
 29 silly publish   _id: 'hubot-newrelic@0.0.1',
-29 silly publish   _shasum: 'e8daec55c8358fab770ec37ada021411d0d89953',
+29 silly publish   _shasum: 'de7bb09c97041d8ddafa0588b85923eaaa13b1b2',
 29 silly publish   _from: '.' }
 30 error Error: forbidden Cannot replace previously published version: 0.0.1: hubot-newrelic
 30 error     at RegClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:300:14)
