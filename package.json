@@ -1,6 +1,6 @@
 {
   "name": "hubot-newrelic",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "New Relic integration for Hubot",
   "main": "index.coffee",
   "scripts": {
@@ -26,7 +26,7 @@
     "request": "2.39.0"
   },
   "engines": {
-      "node": "0.8.x",
-      "npm": "1.1.x"
+    "node": "0.8.x",
+    "npm": "1.1.x"
   }
 }
