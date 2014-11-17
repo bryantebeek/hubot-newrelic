@@ -47,9 +47,9 @@ module.exports = (robot) ->
   robot.respond /newrelic\s(list|show)\sapp(s|lications)/i, (message) ->
     for application in robot.brain.data.newrelic.applications
       last_reported_at = moment(application.last_reported_at).fromNow()
-      responseTime = "#{application.application_summary.response_time} Ms"
-      throughput = "#{application.application_summary.throughput} Rpm"
-      errorRate = "#{application.application_summary.error_rate}% Errors"
+      responseTime = "#{application.application_summary?.response_time} Ms"
+      throughput = "#{application.application_summary?.throughput} Rpm"
+      errorRate = "#{application.application_summary?.error_rate}% Errors"
       message.send "(#{application.name}, #{application.health_status}) #{responseTime}, #{throughput}, #{errorRate} | #{last_reported_at} @ [https://rpm.newrelic.com/accounts/#{accountId}/applications/#{application.id}]"
 
   robot.respond /newrelic\s(list|show)\s(servers?|hosts?)/i, (message) ->
