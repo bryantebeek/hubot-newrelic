@@ -1,6 +1,6 @@
 {
   "name": "hubot-newrelic",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "New Relic integration for Hubot",
   "main": "index.coffee",
   "scripts": {
@@ -20,13 +20,13 @@
   },
   "homepage": "https://github.com/bryantebeek/hubot-newrelic",
   "dependencies": {
-    "bluebird": "2.2.2",
-    "humanize": "0.0.9",
-    "moment": "2.8.1",
-    "request": "2.39.0"
+    "bluebird": ">= 2.2.2",
+    "humanize": ">= 0.0.9",
+    "moment": ">= 2.8.1",
+    "request": ">= 2.39.0"
   },
   "engines": {
-    "node": "0.8.x",
-    "npm": "1.2.x"
+    "node": ">= 0.8.0",
+    "npm": ">= 1.2.0"
   }
 }
